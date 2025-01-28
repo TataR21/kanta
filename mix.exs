@@ -47,7 +47,7 @@ defmodule Kanta.MixProject do
       {:nebulex, "~> 2.5"},
       {:shards, "~> 1.0"},
       {:scrivener, "~> 2.0"},
-      {:scrivener_ecto, "~> 2.0"},
+      {:scrivener_ecto, "~> 2.0 or ~> 3.0"},
       {:uri_query, "~> 0.2"},
       # DEV
       {:versioce, "~> 2.0.0"},
