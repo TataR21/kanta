@@ -23,7 +23,7 @@ defmodule KantaWeb.Components.Shared.Pagination do
             Previous
           </a>
         </div>
-        <div class="hidden md:-mt-px md:flex">
+        <div :if={@metadata[:total_pages] > 1}  class="hidden md:-mt-px md:flex">
           <a
             phx-click={@on_page_change}
             phx-value-index={1}
@@ -60,6 +60,17 @@ defmodule KantaWeb.Components.Shared.Pagination do
             <%= @metadata[:total_pages] %>
           </a>
         </div>
+
+        <div :if={@metadata[:total_pages] <= 1}>
+          <a
+            phx-click={@on_page_change}
+            phx-value-index={1}
+            class={"border-primary-dark dark:border-accent-dark text-primary-dark dark:text-accent-dark border-t-2 pt-4 px-4 inline-flex items-center text-sm font-medium cursor-pointer"}
+          >
+            1
+          </a>
+        </div>
+
         <div class="-mt-px w-0 flex-1 flex justify-end">
           <a phx-click={@on_page_change} phx-value-index={@metadata[:page_number] + 1}
           class={[

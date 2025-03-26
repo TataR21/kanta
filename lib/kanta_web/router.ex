@@ -25,11 +25,7 @@ defmodule KantaWeb.Router do
             get "/css-:md5", KantaWeb.Assets, :css, as: :kanta_dashboard_asset
             get "/js-:md5", KantaWeb.Assets, :js, as: :kanta_dashboard_asset
 
-            redirect(
-              "/",
-              "#{KantaWeb.Router.internal_dashboard_scoped_path(path)}/dashboard",
-              :permanent
-            )
+            redirect("/", "#{path}/dashboard", :permanent)
 
             scope "/", KantaWeb do
               scope "/dashboard", Dashboard do
